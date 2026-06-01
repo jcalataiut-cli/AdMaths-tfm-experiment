@@ -1,0 +1,24 @@
+
+\subsection{Kernel NNGP: Analítico vs Empírico}
+
+Comparamos el kernel analítico del límite NNGP con el kernel empírico
+de redes finitas para anchos crecientes $n \in \{10, 50, 100, 500\}$.
+Usamos 20 puntos de datos, dimensión de entrada 8,
+2 capas ocultas, $\sigma_w=1.5$, $\sigma_b=0.1$.
+
+\begin{table}[h]
+\centering
+\caption{Convergencia del kernel NNGP (FC, ReLU)}
+\begin{tabular}{c|cccc}
+\toprule
+$n$ & Frob. Error & NKA & Correlación & Eigen Error \\
+\midrule
+  $10$ & $0.0826$ & $0.9966$ & $0.9638$ & $0.0256$ \\
+  $50$ & $0.0912$ & $0.9959$ & $0.9473$ & $0.0117$ \\
+  $100$ & $0.3525$ & $0.9851$ & $0.8085$ & $0.2983$ \\
+  $500$ & $0.1277$ & $0.9918$ & $0.9210$ & $0.0418$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La Figura~\ref{fig:kernels} muestra la convergencia.

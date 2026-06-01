@@ -1,0 +1,29 @@
+\section{Verificación Numérica del Límite NNGP}
+\subsection{Convergencia por el Teorema Central del Límite}
+
+Para verificar la convergencia de la salida de una red neuronal
+a un proceso gaussiano, simulamos una red feedforward de 3 capas ocultas
+con anchos crecientes. Las simulaciones usan la versión vectorizada
+(todas las muestras Monte Carlo simultáneas).
+
+\begin{table}[h]
+\centering
+\caption{Métricas de convergencia a la normal (ReLU)}
+\label{tab:convergence}
+\begin{tabular}{c|cccc}
+\toprule
+$n$ & Wasserstein & KS $p$ & $\sigma_{\text{emp}}/\sigma_{\text{anal}}$ & JS \\
+\midrule
+  $5$ & $0.31862$ & $0.0000$ & $1.0395$ & $0.24013$ \\
+  $10$ & $0.20508$ & $0.0000$ & $1.0109$ & $0.15885$ \\
+  $50$ & $0.05424$ & $0.1727$ & $0.9863$ & $0.07597$ \\
+  $100$ & $0.04121$ & $0.4957$ & $1.0111$ & $0.07409$ \\
+  $500$ & $0.03466$ & $0.7878$ & $1.0458$ & $0.10365$ \\
+  $1000$ & $0.06524$ & $0.8625$ & $1.0143$ & $0.19843$ \\
+  $2000$ & $nan$ & $nan$ & $1.0000$ & $nan$ \\
+  $5000$ & $nan$ & $nan$ & $1.0000$ & $nan$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Las figuras muestran la convergencia empírica.
